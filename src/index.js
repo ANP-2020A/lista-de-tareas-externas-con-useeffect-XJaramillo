@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+
+const users = [
+    {
+        firstName: 'Xavier',
+        lastName: 'Jaramillo',
+    },
+    {
+        firstName: 'Andrea',
+        lastName: 'Hurtado',
+    },
+    {
+        firstName: 'Jose',
+        lastName: 'Martinez',
+    },
+];
 
 ReactDOM.render(
   <React.StrictMode>
