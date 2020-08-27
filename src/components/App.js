@@ -1,19 +1,27 @@
-import React from 'react';
-import logo from '../images/logo.svg';
+import React, { useState } from 'react';
 import '../styles/App.css';
-import {renderIntoDocument} from "react-dom/test-utils";
-import UserList from "./UserList";
-import TodoList from "./TodoList";
+import UserList from './UserList';
+import TodoList from './TodoList';
 
-const App = (props) => {
+const App = () => {
 
-    return (
-        <div>
-            <UserList users={ props.users } />
+  const [ viewTasks, setViewTasks ] = useState( true );
 
-            <TodoList/>
-        </div>
-    );
+  return (
+    <>
+      <UserList />
+
+      <button onClick={ () => setViewTasks( ( prevViewTasks ) => !prevViewTasks ) }>
+        { viewTasks
+          ? 'Ocultar'
+          : 'Ver' } lista de tareas
+      </button>
+      {
+        viewTasks && <TodoList />
+      }
+    </>
+  );
 };
 
 export default App;
+
